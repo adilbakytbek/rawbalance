@@ -1,0 +1,94 @@
+// USER VARIABLES SECTION
+
+$accent: #FDC14D // Accent Color
+$blue: #7C47EC // Blue Color
+$fontsize: 16px // Body Font Size
+$textcolor: #484848 // Text Color
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$font: 'Avenir', sans-serif // Roboto Font Family
+$btnRadius: 20px //Button Border-radius
+$btnPadding: 10px 65px
+$btnFont: 16px
+
+// Loader Settings
+$duration: 1.5s
+$container-size: 250px
+$box-size: 33px
+$box-border-radius: 15%
+$loaderbg: #fff
+
+// Hamburger
+$hamburger-layer-color: #fff
+$hamburger-padding-x: 0
+$hamburger-padding-y: 0
+$hamburger-layer-border-radius: 0
+$hamburger-layer-height: 3px 
+
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 20px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+@import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+@import 'node_modules/owl.carousel/dist/assets/owl.carousel.min' // OwlCarousel
+@import 'node_modules/owl.carousel/dist/assets/owl.theme.default.min' // OwlCarousel Theme-Default
+@import 'app/libs/magnific/magnific-popup.scss' // MagnificPopup
+@import 'node_modules/hamburgers/_sass/hamburgers/hamburgers.scss' //Hamburgers
+@import 'node_modules/hamburgers/_sass/hamburgers/_base.scss' // Base Hamburgers
+@import 'node_modules/animate.css/animate.min' // Animate.css
+@import 'app/libs/FontAwesome/css/font-awesome.min.scss' // FontAwesome
+
+
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		// font-display: swap // Uncomment to initially display system fonts
+		src: local($fname), url($furl) format('woff2')
+
+
+// 900 	extrablack/fat/poster/ultrablack/heavy
+// 800 	black/extrabold/heavy
+// 700 	bold
+// 600 	semibold/demibold
+// 500 	medium
+// 400 	regular/normal
+// 300 	book/demi/light
+// 200 	light/thin
+// 100 	extralight/ultralight	
+
+
+@include font('Avenir', normal, 800, '../fonts/Avenir/AvenirNextCyr-Heavy.woff2')
+@include font('Avenir', italic, 800, '../fonts/Avenir/AvenirNextCyr-HeavyItalic.woff2')
+
+@include font('Avenir', normal, 700, '../fonts/Avenir/AvenirNextCyr-Bold.woff2')
+@include font('Avenir', italic, 700, '../fonts/Avenir/AvenirNextCyr-HeavyItalic.woff2')
+
+@include font('Avenir', normal, 600, '../fonts/Avenir/AvenirNextCyr-Demi.woff2')
+@include font('Avenir', italic, 600, '../fonts/Avenir/AvenirNextCyr-DemiItalic.woff2')
+
+@include font('Avenir', normal, 500, '../fonts/Avenir/AvenirNextCyr-Medium.woff2')
+@include font('Avenir', italic, 500, '../fonts/Avenir/AvenirNextCyr-MediumItalic.woff2')
+
+@include font('Avenir', normal, 400, '../fonts/Avenir/AvenirNextCyr-Regular.woff2')
+@include font('Avenir', italic, 400, '../fonts/Avenir/AvenirNextCyr-Italic.woff2')
+
+@include font('Avenir', normal, 300, '../fonts/Avenir/AvenirNextCyr-Light.woff2')
+@include font('Avenir', italic, 300, '../fonts/Avenir/AvenirNextCyr-LightItalic.woff2')
+
+@include font('Avenir', normal, 200, '../fonts/Avenir/AvenirNextCyr-Thin.woff2')
+@include font('Avenir', italic, 200, '../fonts/Avenir/AvenirNextCyr-ThinItalic.woff2')
+
+@include font('Avenir', normal, 100, '../fonts/Avenir/AvenirNextCyr-UltraLight.woff2')
+@include font('Avenir', italic, 100, '../fonts/Avenir/AvenirNextCyr-UltraLightIt.woff2')
+
+@include font('Shnobel', normal, 400, '../fonts/Shnobel-Regular.woff2')	

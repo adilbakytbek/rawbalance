@@ -1,0 +1,277 @@
+// USER VARIABLES SECTION
+
+$accent: orange // Accent Color
+$fontsize: 16px // Body Font Size
+$textcolor: #333 // Text Color
+$system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$font: Roboto, sans-serif // Roboto Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 20px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+@import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+@import 'node_modules/owl.carousel/dist/assets/owl.carousel.min.scss' // OwlCarousel
+@import 'node_modules/owl.carousel/dist/assets/owl.theme.default.min.scss' // OwlCarousel Theme-Default
+@import 'app/libs/magnific/magnific-popup.scss' // MagnificPopup
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		// font-display: swap // Uncomment to initially display system fonts
+		src: local($fname), url($furl) format('woff2')
+
+
+// 100 	Тонкий (Волосяной) Thin (Hairline)
+// 200 	Дополнительный светлый (Сверхсветлый) Extra Light (Ultra Light)
+// 300 	Светлый Light
+// 400 	Нормальный Normal
+// 500 	Средний Medium
+// 600 	Полужирный Semi Bold (Demi Bold)
+// 700 	Жирный Bold
+// 800 	Дополнительный жирный (Сверхжирный) Extra Bold (Ultra Bold)
+// 900 	Черный (Густой) Black (Heavy)	
+
+
+@include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
+@include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2')
+@include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2')
+@include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $font
+	font-size: $fontsize
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	overflow-x: hidden
+	color: $textcolor
+
+
+h1, h2, h3, h4, h5, h6
+	display: block
+	line-height: 1.2
+	margin-bottom: 0
+	font-family: 'Roboto', sans-serif
+
+b, strong
+	font-weight: bold
+
+section, header
+	position: relative
+
+h1
+	font-size: 56px
+
+h2
+	font-size: 48px
+
+h3
+	font-size: 36px
+
+h4
+	font-size: 28px
+
+h5
+	font-size: 24px
+
+h6
+	font-size: 18px
+
+button
+	outline: none !important
+	cursor: pointer
+
+ul, li
+	padding: 0
+	margin: 0
+	list-style: none
+
+a
+	color: $accent
+	&:hover
+		text-decoration: underline
+		color: $accent			
+
+
+// MagnificPopup Animation
+
+
+// ====== Move-from-top effect ======
+
+.mfp-move-from-top
+
+	.mfp-content 
+	 vertical-align: top
+
+	
+	// /* start state */
+	.mfp-with-anim 
+		opacity: 0
+		transition: all 0.2s
+		transform: translateY(-100px)
+	
+	
+	&.mfp-bg 
+		opacity: 0
+		transition: all 0.2s
+	
+	
+	// /* animate in */
+	&.mfp-ready 
+		.mfp-with-anim 
+			opacity: 1
+			transform: translateY(0)
+		&.mfp-bg 
+			opacity: 0.8
+	
+	// /* animate out */
+	&.mfp-removing 
+		
+		.mfp-with-anim 
+			transform: translateY(-50px)
+			opacity: 0
+		
+		&.mfp-bg 
+			opacity: 0
+		
+		
+
+
+// ====== Move-horizontal effect ======
+
+
+.mfp-move-horizontal
+	// /* start state */
+	.mfp-with-anim 
+		opacity: 0
+		transition: all 0.3s
+		transform: translateX(-50px)
+	
+	
+	&.mfp-bg 
+		opacity: 0
+		transition: all 0.3s
+	
+	
+	// /* animate in */
+	&.mfp-ready 
+		.mfp-with-anim 
+			opacity: 1
+			transform: translateX(0)
+		
+		&.mfp-bg 
+			opacity: 0.8
+		
+	
+	
+	// /* animate out */
+	&.mfp-removing 
+		
+		.mfp-with-anim 
+			transform: translateX(50px)
+			opacity: 0
+		
+		&.mfp-bg 
+			opacity: 0
+
+
+// ====== Zoom-out effect ======
+
+.mfp-zoom-out 
+
+	// /* start state */
+	.mfp-with-anim 
+		opacity: 0
+		transition: all 0.3s ease-in-out 
+		transform: scale(1.3);
+	
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.3s ease-out
+	
+	// /* animate in */
+
+	&.mfp-ready 
+		.mfp-with-anim 
+			opacity: 1
+			transform: scale(1)
+		
+		&.mfp-bg 
+			opacity: 0.8
+		
+	// /* animate out */
+		
+	&.mfp-removing 
+		
+		.mfp-with-anim 
+			transform: scale(1.3)
+			opacity: 0
+		
+		&.mfp-bg 
+			opacity: 0
+
+// ==================			
+
+
+.modal
+	max-width: 500px
+	width: 100%
+	background-color: #fff
+	margin: 0 auto
+	position: relative
+	height: 300px
+
+
+	// ≥1200px
++media-breakpoint-down(lg)
+
+
+// ≥992px
++media-breakpoint-down(md)
+
+// ≥768px
++media-breakpoint-down(sm)
+
+// ≥576px
++media-breakpoint-down(xs)   
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)

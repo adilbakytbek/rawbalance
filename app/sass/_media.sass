@@ -1,0 +1,142 @@
+// ≥1200px
++media-breakpoint-down(lg)
+
+// ≥992px
++media-breakpoint-down(md)
+
+	.inside-page
+		.top__line
+			min-height: auto
+			padding-bottom: 80px
+
+	.inside__wrapper.about p
+		font-size: 14px
+
+	.hamburger-wrapper
+		text-align: right
+		position: relative
+		z-index: 11
+
+
+	.top__line
+		&-brand
+			position: relative
+			z-index: 11
+		&-nav
+			position: fixed
+			width: 100%
+			height: 100%
+			z-index: 10
+			background-color: $blue
+			display: flex !important
+			overflow: hidden
+			transition: right .4s ease
+			right: -100%
+			top: 0
+			justify-content: center
+			align-items: center
+			.nav
+				width: 100%
+				flex-direction: column
+				&__li
+					margin: 5px 0
+					text-align: center
+					padding: 5px 0
+					display: block
+					border-bottom: 1px solid #6A37D7
+					width: 100%
+				&__link
+					color: #fff
+					display: block
+					font-size: 22px			
+
+			&.active
+				right: 0
+			
+		
+
+	.section
+		h2
+			font-size: 56px
+
+	.s-about
+		padding-top: 0
+		&::before, &::after
+			display: none
+
+		h2
+			text-align: center
+			font-size: 56px		
+	.about__right
+		justify-content: center
+	
+
+	.s-products
+		padding: 80px 0
+
+	.products__top-desc
+		font-size: 16px
+
+	.products__top-filter
+		flex-direction: column
+		.filter__list
+			margin: 10px 0
+
+	.products__bottom
+		margin-top: 20px
+		&::before, &::after
+			display: none	
+
+	.s-reviews
+		h2
+			font-size: 41px
+			
+		.reviews__wrapper 
+			.reviews__items
+				margin: 0 auto
+
+	.main__footer
+		.footer__map
+			margin-bottom: 30px
+
+		.footer__center
+			margin-top: 30px
+
+	.footer__line
+		.brand
+			margin: 20px auto
+
+		&-center
+			margin-bottom: 20px
+
+		&-right
+			text-align: center
+
+	.main__header
+		min-height: auto
+		padding-bottom: 220px
+		background-position: left center
+
+	.header__content-h1
+		font-size: 72px										
+
+// ≥768px
++media-breakpoint-down(sm)
+
+// ≥576px
++media-breakpoint-down(xs)   
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
